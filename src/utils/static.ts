@@ -65,7 +65,7 @@ export const authMenuItem = [
 export const booksData = [
   {
     id: 1,
-    name: "Averiguando la vida",
+    name: "Book 1",
     author: [
       {
         name: "Author 1",
@@ -85,7 +85,7 @@ export const booksData = [
   },
   {
     id: 2,
-    name: "Probando la vida",
+    name: "Book 2",
     author: [
       {
         name: "Author 1",
@@ -100,7 +100,7 @@ export const booksData = [
   },
   {
     id: 3,
-    name: "Comiendo en la panaderia",
+    name: "Book 3",
     author: [
       {
         name: "Author 1",

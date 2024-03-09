@@ -1,7 +1,7 @@
 import { DataTable } from "@/components/Table/data-table";
 import { booksData } from "@/utils/static";
 import { columns } from "@/components/Table/columns";
-import { BookProps } from "@/models/book.props";
+import { BookProps } from "@/models";
 import { useState } from "react";
 
 function Dashboard() {

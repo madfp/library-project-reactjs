@@ -5,20 +5,10 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ArrowUpDown, MoreHorizontal, Trash, Pencil, Eye } from "lucide-react";
+import { ArrowUpDown, MoreHorizontal, Eye } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 
 export const columns: ColumnDef<BookProps>[] = [
   {
@@ -102,25 +92,15 @@ export const columns: ColumnDef<BookProps>[] = [
               <MoreHorizontal className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Ajustes</DropdownMenuLabel>
-            <DropdownMenuSeparator />
+          <DropdownMenuContent>
             <DropdownMenuItem>
-              <Eye className="size-4 mr-1" />
-              Ver
-            </DropdownMenuItem>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(book.id)}
-            >
-              <Pencil className="size-4 mr-1" />
-              Editar
-            </DropdownMenuItem>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(book.id)}
-              className="text-red-500"
-            >
-              <Trash className="size-4 mr-1" />
-              Eliminar
+              <a
+                href={`/libros/${book.id}`}
+                className="flex items-center justify-start"
+              >
+                <Eye className="size-4 mr-1" />
+                <span className="mb-1 font-bold">Ver libro</span>
+              </a>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

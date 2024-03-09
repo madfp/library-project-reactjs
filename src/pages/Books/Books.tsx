@@ -29,23 +29,24 @@ function PublishedBooks() {
   };
 
   const filterBooks = (filter: string, filterOptions: string) => {
-    console.log(filter, filterOptions);
+    console.log(`name:${filter} - filterOption:${filterOptions}`);
   };
 
   return (
     <>
-      <section className="relative flex flex-col items-center justify-center gap-3 mb-40 lg:mb-0">
-        <div className="w-full flex flex-wrap justify-center gap-2">
+      <section className="flex relative lg:static pt-16 flex-col items-center justify-center gap-3 lg:mb-0">
+        {/* Desktop filter section*/}
+        <div className="pt-2 pb-4 lg:pt-5 w-full fixed top-12 bg-white flex justify-center gap-2 px-4 lg:px-0">
           <Input
             value={filterValue}
             onChange={handleFilterChange}
             type="text"
-            placeholder="Filtrar por nombre o autor del libro..."
+            placeholder="Ingrese el valor de búsqueda..."
             className="lg:max-w-[40%]"
           />
           <Select onValueChange={(value) => handleFilterOptions(value)}>
-            <SelectTrigger className="w-[85%] lg:w-[180px]">
-              <SelectValue placeholder="Filtros de busqueda" />
+            <SelectTrigger className="w-[40%] lg:w-[180px]">
+              <SelectValue placeholder="Tipo" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="name">Nombre</SelectItem>
@@ -54,37 +55,20 @@ function PublishedBooks() {
               <SelectItem value="genre">Genero</SelectItem>
             </SelectContent>
           </Select>
-          <Button onClick={() => filterBooks(filterValue, filterOptions)}>
-            Buscar
-          </Button>
         </div>
-        <div className="lg:mt-8 px-4 sm:px-8">
-          <div className="grid place-items-center gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filteredBooks.length == 0 &&
-              books.map((book) => (
-                <BookCard
-                  id={book.id}
-                  name={book.name}
-                  genre={book.genre}
-                  key={book.name}
-                  coverPhoto=""
-                  author={book.author}
-                  publisher={book.publisher}
-                />
-              ))}
-            {filteredBooks.length > 0 &&
-              books.map((book) => (
-                <BookCard
-                  id={book.id}
-                  name={book.name}
-                  genre={book.genre}
-                  key={book.title}
-                  coverPhoto=""
-                  author={book.author}
-                  publisher={book.publisher}
-                />
-              ))}
-          </div>
+        <div className="px-8 grid place-items-center gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {filteredBooks.length == 0 &&
+            books.map((book) => (
+              <BookCard
+                id={book.id}
+                name={book.name}
+                genre={book.genre}
+                key={book.name}
+                coverPhoto=""
+                author={book.author}
+                publisher={book.publisher}
+              />
+            ))}
         </div>
       </section>
     </>

@@ -8,12 +8,11 @@ import {
 } from "@/components/ui/sheet";
 import { buttonVariants } from "../ui/button";
 import { Menu } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import Book from "../../assets/Book.svg";
 function Header() {
   return (
-    <header className="py-3 px-8 flex justify-between items-center">
+    <header className="fixed bg-white w-full bg-opacity-[98%] top-0 z-10 py-3 px-8 flex justify-between items-center">
       <a href="/" className="flex gap-1 font-bold">
         <img src={Book} alt="Icono de libro" />
         TuLibreria.com
@@ -51,13 +50,21 @@ function Header() {
           <Menu />
         </SheetTrigger>
         <SheetContent>
-          <SheetHeader>
-            <SheetTitle>Are you absolutely sure?</SheetTitle>
-            <SheetDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </SheetDescription>
+          <SheetHeader className="text-left">
+            <SheetTitle>TuLibreria.com</SheetTitle>
+            <SheetDescription></SheetDescription>
           </SheetHeader>
+          <ul className="flex flex-col gap-2 mt-4">
+            <li>
+              <a href="/">Inicio</a>
+            </li>
+            <li>
+              <a href="/sobre-nosotros">Sobre nosotros</a>
+            </li>
+            <li>
+              <a href="/libros">Libros</a>
+            </li>
+          </ul>
         </SheetContent>
       </Sheet>
       {/* Contenido para el usuario autenticado */}

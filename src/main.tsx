@@ -17,7 +17,7 @@ import { Toaster } from "./components/ui/toaster.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Header />
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen mt-16 relative flex flex-col">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

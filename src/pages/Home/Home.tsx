@@ -10,7 +10,7 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center h-[95vh] md:h-[90vh] md:px-16 text-center text-black bg-[url(/DarkBookShelf.webp)] bg-cover bg-center">
+      <section className="w-full flex flex-col items-center justify-center h-[100vh] md:h-[100vh] md:px-16 text-center text-black bg-[url(/DarkBookShelf.webp)] bg-cover bg-center">
         <h1 className="text-3xl md:text-5xl font-black text-white lg:max-w-[80%]">
           Más que una biblioteca, una comunidad de lectores.
         </h1>
@@ -149,16 +149,34 @@ function Home() {
               </li>
             </ul>
           </div>
-          <div className="mt-8 mb-12 px-2 lg:px-6">
+          <div className="mt-4 md:mt-8 mb-8 px-4 lg:px-6">
             <h2 className="text-3xl lg:text-5xl font-black">Libros en línea</h2>
-            <h3 className="text-xl font-bold my-3">
-              Accede a las recomendaciones y reseñas de otros apasionados por la
-              lectura.
-            </h3>
-            <p className="mt-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-              voluptatibus vel minus fugit adipisci
+            <p className="lg:max-w-[80%] mt-4 text-lg font-semibold">
+              Tu libreria de confianza a un click de distancia. Recomendaciones
+              y reseñas de libros de todos los géneros literarios en un solo
+              lugar. Crea tus propias listas de libros, comparte tus opiniones y
+              descubre nuevas lecturas.
             </p>
+            <div className="flex flex-wrap justify-left items-center gap-3 mt-8 md:mt-12">
+              <Badge
+                variant={"default"}
+                className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 bg-red-900 rounded-md"
+              >
+                Lorem ipsum
+              </Badge>
+              <Badge
+                variant={"default"}
+                className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 bg-green-900 rounded-md"
+              >
+                Lorem ipsum
+              </Badge>
+              <Badge
+                variant={"default"}
+                className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 bg-blue-900 rounded-md"
+              >
+                Lorem ipsum
+              </Badge>
+            </div>
           </div>
         </div>
         <img
