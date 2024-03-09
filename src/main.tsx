@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard/Dashboard.tsx";
 import Book from "./pages/Book/Book.tsx";
 import Books from "./pages/Books/Books.tsx";
 import "./index.css";
+import { Toaster } from "./components/ui/toaster.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -31,5 +32,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       </BrowserRouter>
     </main>
     <Footer />
+    <Toaster />
   </React.StrictMode>
 );

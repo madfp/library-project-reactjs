@@ -1,13 +1,15 @@
+export type authorValues = {
+  name: string;
+  lastName: string;
+  birthDate: string;
+  deathDate: string;
+};
+
 export type FormValues = {
   name: string;
   publisher: string;
   publicationDate: string;
   genre: string;
-  authors: {
-    name: string;
-    lastName: string;
-    birthDate: string;
-    deathDate: string;
-  }[];
+  authors: authorValues[];
   cover: string;
 };

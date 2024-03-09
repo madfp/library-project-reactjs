@@ -28,7 +28,7 @@ function LoginForm() {
 
   function onSubmit(data: z.infer<typeof LoginSchema>) {
     toast({
-      title: "You submitted the following values:",
+      title: "Datos enviados:",
       description: (
         <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
@@ -77,15 +77,14 @@ function LoginForm() {
         />
         <p className="pl-1">
           No tiene una cuenta?{" "}
-          <Link to="/registrarme" className="text-blue-600">
+          <Link
+            to="/registrarme"
+            className="text-blue-600 transition-color duration-300 hover:text-blue-800"
+          >
             Regístrate aquí
           </Link>
         </p>
-        <Button
-          className="w-full"
-          type="submit"
-          onClick={form.handleSubmit(onSubmit)}
-        >
+        <Button className="w-full" type="submit">
           Iniciar sesión
         </Button>
       </form>

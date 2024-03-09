@@ -9,19 +9,22 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { ArrowUpDown, MoreHorizontal, Trash, Pencil, Eye } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
-{
-  /* CORREGIR LAS IMAGENES DE LOS LIBROS */
-}
 export const columns: ColumnDef<BookProps>[] = [
   {
     accessorKey: "cover",
     header: "Cover",
     cell: ({ row }) => {
-      const cover = row.getValue("cover");
-      console.log(cover);
       return (
         <Avatar>
           <AvatarImage src="/BookCover.webp" />
@@ -101,19 +104,22 @@ export const columns: ColumnDef<BookProps>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Ajustes</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(book.id)}
-            >
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <Eye className="size-4 mr-1" />
               Ver
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(book.id)}
             >
+              <Pencil className="size-4 mr-1" />
               Editar
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(book.id)}
+              className="text-red-500"
             >
+              <Trash className="size-4 mr-1" />
               Eliminar
             </DropdownMenuItem>
           </DropdownMenuContent>

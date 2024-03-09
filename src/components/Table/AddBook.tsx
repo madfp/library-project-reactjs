@@ -5,9 +5,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
 import { BookProps } from "@/models/book.props";
-
+import AddBookForm from "./Form/AddBookForm";
 function AddBook({
   setData,
 }: {
@@ -20,18 +21,13 @@ function AddBook({
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Ingrese la inforacion relevante del libro</DialogTitle>
+          <DialogTitle>Ingrese la informacion relevante del libro</DialogTitle>
           <DialogDescription>
             Es necesario que se asegure que la informacion del libro sea la
             correcta
           </DialogDescription>
         </DialogHeader>
-        {/* nombre */}
-        {/* autores - nombre - apellido - nacimiento- fallecimiento*/}
-        {/* Genero */}
-        {/* fecha de publicacion */}
-        {/* Imagen del libro */}
-        {/* Editorial */}
+        <AddBookForm />
       </DialogContent>
     </Dialog>
   );

@@ -1,7 +1,10 @@
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import Books from "../../assets/Books.svg";
 import Writing from "../../assets/Writings.svg";
 import Stars from "../../assets/Stars.svg";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { MoveUpRight } from "lucide-react";
 
 function Home() {
   return (
@@ -11,36 +14,124 @@ function Home() {
         <h1 className="text-3xl md:text-5xl font-black text-white lg:max-w-[80%]">
           Más que una biblioteca, una comunidad de lectores.
         </h1>
-        <p className="max-w-[90%] lg:max-w-[50%] text-white font-semibold mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsam
-          asperiores quidem quae vel, quasi fugit repellat! Magnam nisi, animi
-          ducimus facilis repellendus.
+        <p className="max-w-[90%] lg:max-w-[50%] text-lg text-white font-bold mt-4 bg-black rounded bg-opacity-60">
+          Bienvenido a la comunidad de lectores más grande de la web. Comparte y
+          descubre las recomendaciones de otros usuarios, califica y comparte
+          tus opiniones.
         </p>
         <div className="max-w-[70%] mx-auto md:mx-0 lg:max-w-[50%] grid grid-cols-2 gap-2 mt-8">
-          <Button color="default">Ingresar gratis</Button>
-          <Button color="default">Mas información</Button>
+          <a
+            className={`${buttonVariants({
+              variant: "secondary",
+            })} hover:cursor-pointer`}
+            href="/iniciar-sesion"
+          >
+            Ingresar gratis
+          </a>
+          <a
+            className={`${buttonVariants({
+              variant: "secondary",
+            })} hover:cursor-pointer`}
+            href="/sobre-nosotros"
+          >
+            Mas información
+          </a>
         </div>
       </section>
       {/* Features section */}
-      <section className="w-full h-[70vh] mt-32 px-4 md:px-32 gap-6 grid grid-cols-1 md:grid-cols-2 place-items-center">
-        <div className="bg-slate-200 h-full w-full rounded"></div>
-        <div className="md:row-span-2 bg-slate-200 w-full h-full rounded"></div>
-        <div className="bg-slate-200 w-full h-full rounded"></div>
+      <section className="w-full lg:h-[80vh] mt-24 px-4 md:px-12 gap-6 flex flex-wrap md:flex-nowrap justify-between items-center">
+        <div className="md:max-w-[40%]">
+          <h1 className="text-4xl font-black">Comparte tus recomendaciones</h1>
+          <Separator className="mt-2 mb-6" />
+          <p className="my-4">
+            Accede a todas las categorias de generos literarios y comparte tus
+            recomendaciones con la comunidad.
+          </p>
+          <div className="mt-4 space-x-4">
+            <a className={`${buttonVariants({ variant: "default" })}`}>
+              Ver libros
+            </a>
+            <a className={`${buttonVariants({ variant: "outline" })}`}>
+              Publicar recomendación{" "}
+            </a>
+          </div>
+          <div className="mt-24 space-y-2 space-x-1">
+            <Badge
+              variant={"outline"}
+              className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 hover:bg-[#191723] hover:text-white"
+            >
+              Literatura
+            </Badge>
+            <Badge
+              variant={"outline"}
+              className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 hover:bg-[#191723] hover:text-white"
+            >
+              Ciencia ficción
+            </Badge>
+            <Badge
+              variant={"outline"}
+              className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 hover:bg-[#191723] hover:text-white"
+            >
+              Terror
+            </Badge>
+            <Badge
+              variant={"outline"}
+              className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 hover:bg-[#191723] hover:text-white"
+            >
+              Ciencia
+            </Badge>
+            <Badge
+              variant={"outline"}
+              className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 hover:bg-[#191723] hover:text-white"
+            >
+              Historia
+            </Badge>
+            <Badge
+              variant={"outline"}
+              className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 hover:bg-[#191723] hover:text-white"
+            >
+              Mejora personal
+            </Badge>
+            <Badge
+              variant={"outline"}
+              className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 hover:bg-[#191723] hover:text-white"
+            >
+              Romance
+            </Badge>
+            <Badge
+              variant={"outline"}
+              className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 hover:bg-[#191723] hover:text-white"
+            >
+              Misterio
+            </Badge>
+          </div>
+        </div>
+        <div className="hidden md:grid h-full w-full md:w-[60%] grid-cols-1 md:grid-cols-4 grid-rows-5 gap-3">
+          <div className="w-full md:col-span-4 row-span-3 bg-slate-200 bg-[url(/MysticalBooks.webp)] bg-center bg-cover rounded-lg"></div>
+          <div className="border md:col-span-2 bg-slate-100 md:row-span-2 relative rounded-lg p-2">
+            <h2 className="text-2xl font-bold mt-4">
+              Mira los libros con más recomendaciones
+            </h2>
+            <p className="mt-2 px-1">
+              Accede a nuestros servicios y descubre los libros más recomendados
+              por la comunidad.
+            </p>
+            <a
+              href="/libros"
+              className="p-1 absolute top-2 right-2 bg-gray-300 rounded-full hover:scale-110 transition-all duration-300"
+            >
+              <MoveUpRight />
+            </a>
+          </div>
+          <div className="bg-[url(/MysteryBookCircle.webp)] bg-center bg-cover bg-no-repeat md:col-span-2 row-span-2 rounded-lg p-2"></div>
+        </div>
       </section>
-      <section className="my-20">
-        <h1>Lorem ipsum</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur
-          nulla nesciunt doloremque magni, necessitatibus ducimus autem delectus
-          sed cupiditate at, culpa, et est. Sint perferendis laborum dolorem,
-          praesentium repellat ea.
-        </p>
-      </section>
+
       {/* New section idea */}
-      <section className="mb-12 px-4 lg:px-20 grid grid-cols-1 md:grid-cols-2 place-items-center w-full">
-        <div className="flex flex-col bg-[#191723] text-white h-full w-full lg:rounded-tl-lg lg:rounded-bl-lg rounded-tl-lg rounded-tr-lg lg:rounded-tr-none">
+      <section className="my-32 md:h-[70vh] px-4 lg:px-12 grid grid-cols-1 md:grid-cols-2 place-items-center w-full">
+        <div className="flex flex-col bg-[#191723] text-white h-full w-full lg:rounded-tl-lg md:rounded-bl-lg rounded-tl-lg rounded-tr-lg md:rounded-tr-none">
           <div className="flex flex-wrap justify-between items-center px-4 pt-6 lg:pl-8 lg:pr-10 lg:mt-8 w-full">
-            <span className="text-2xl font-bold">
+            <span className="text-2xl font-bold mb-2">
               Tu<span className="text-blue-400">Libreria</span>.com
             </span>
             <ul className="mt-4 lg:mt-0 flex gap-3 lg:gap-4">
@@ -58,18 +149,22 @@ function Home() {
               </li>
             </ul>
           </div>
-          <div className="mt-8 mb-12 px-4 lg:px-8">
-            <h2 className="text-3xl lg:text-6xl font-black">Libros en línea</h2>
+          <div className="mt-8 mb-12 px-2 lg:px-6">
+            <h2 className="text-3xl lg:text-5xl font-black">Libros en línea</h2>
             <h3 className="text-xl font-bold my-3">
               Accede a las recomendaciones y reseñas de otros apasionados por la
               lectura.
             </h3>
+            <p className="mt-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+              voluptatibus vel minus fugit adipisci
+            </p>
           </div>
         </div>
         <img
           src="/BookShelf.webp"
           alt="BookShelf"
-          className="rounded-bl-lg rounded-br-lg lg:rounded-bl-none lg:rounded-tr-lg lg:rounded-br-lg h-full w-full"
+          className="rounded-bl-lg rounded-br-lg md:rounded-bl-none md:rounded-tr-lg md:rounded-br-lg h-full w-full"
           loading="lazy"
         />
       </section>

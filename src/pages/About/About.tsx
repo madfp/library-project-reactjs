@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+
 function About() {
   return (
     <>
@@ -14,16 +15,21 @@ function About() {
             disfruta de tu espacio único para la literatura. ¡Empieza a leer y
             conectar!
           </p>
-          <Button className="mt-8 lg:w-[30%] mx-auto" color="primary">
+          <a
+            className={`mt-8 lg:w-[30%] mx-auto ${buttonVariants({
+              variant: "default",
+            })}`}
+            href="/iniciar-sesion"
+          >
             Ingresar gratis
-          </Button>
+          </a>
         </div>
+
         <div className="max-h-screen overflow-hidden hidden lg:block rounded-lg max-w-xl">
           <img src="/FantasyBookShelf.webp" alt="Book Banner" />
         </div>
       </section>
       <section className="my-8">
-        <div className="w-full bg-slate-200 h-32 mb-12"></div>
         <div className="px-4 md:px-12 mb-12">
           <h2 className="text-xl font-semibold mb-2 md:mb-4">
             Comparte tus recomendaciones de libros al resto de la comunidad
