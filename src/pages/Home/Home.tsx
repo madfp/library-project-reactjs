@@ -108,7 +108,7 @@ function Home() {
         </div>
         <div className="hidden md:grid h-full w-full md:w-[60%] grid-cols-1 md:grid-cols-4 grid-rows-5 gap-3">
           <div className="w-full md:col-span-4 row-span-3 bg-slate-200 bg-[url(/MysticalBooks.webp)] bg-center bg-cover rounded-lg"></div>
-          <div className="border md:col-span-2 bg-slate-100 md:row-span-2 relative rounded-lg p-2">
+          <div className="border-2 md:col-span-2 md:row-span-2 relative rounded-lg p-2">
             <h2 className="text-2xl font-bold mt-4">
               Mira los libros con más recomendaciones
             </h2>
@@ -162,19 +162,19 @@ function Home() {
                 variant={"default"}
                 className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 bg-red-900 rounded-md"
               >
-                Lorem ipsum
+                Recomendaciones
               </Badge>
               <Badge
                 variant={"default"}
                 className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 bg-green-900 rounded-md"
               >
-                Lorem ipsum
+                Comentarios
               </Badge>
               <Badge
                 variant={"default"}
                 className="py-2 px-4 text-md hover:cursor-pointer transition-color duration-500 bg-blue-900 rounded-md"
               >
-                Lorem ipsum
+                Calificaciones
               </Badge>
             </div>
           </div>
